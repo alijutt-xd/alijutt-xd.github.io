@@ -1,217 +1,654 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ali Jutt is a developer focused on full-stack products, AI automation, secure systems, and modern web experiences."
-    />
-    <title>Ali Jutt | Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <div class="container nav">
-          <a href="#top" class="brand" aria-label="Ali Jutt home">
-            <span class="brand-mark">AJ</span>
-            <span class="brand-name">Ali Jutt</span>
-          </a>
+:root {
+  --bg: #07111d;
+  --bg-soft: #0d1726;
+  --panel: rgba(15, 23, 34, 0.82);
+  --panel-strong: #0f1b2c;
+  --panel-alt: rgba(18, 28, 43, 0.95);
+  --card: rgba(17, 24, 39, 0.92);
+  --card-border: rgba(148, 163, 184, 0.13);
+  --text: #edf4ff;
+  --muted: #a8b8d6;
+  --soft: #dfe9ff;
+  --primary: #7cb4ff;
+  --primary-strong: #5a82ff;
+  --secondary: #9ff9d9;
+  --accent: #8d6bff;
+  --shadow: 0 30px 80px rgba(5, 10, 18, 0.45);
+  --radius: 22px;
+}
 
-          <nav class="main-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#workflow">Workflow</a>
-            <a href="#contact">Contact</a>
-          </nav>
+* {
+  box-sizing: border-box;
+}
 
-          <a
-            class="button button-primary"
-            href="https://github.com/alijutt-xd"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-        </div>
-      </header>
+html {
+  scroll-behavior: smooth;
+}
 
-      <main id="top">
-        <section class="hero section">
-          <div class="container hero-grid">
-            <div class="hero-copy">
-              <p class="eyebrow">Developer • Builder • Problem Solver</p>
-              <h1>Crafting thoughtful digital experiences with code.</h1>
-              <p class="lead">
-                I build modern software, automation workflows, and secure digital products
-                focused on performance, clarity, and real-world impact.
-              </p>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(124, 180, 255, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(141, 107, 255, 0.16), transparent 25%),
+    var(--bg);
+  color: var(--text);
+}
 
-              <div class="cta-row">
-                <a class="button button-primary" href="#projects">View Projects</a>
-                <a class="button button-secondary" href="https://github.com/alijutt-xd" target="_blank" rel="noreferrer">
-                  Explore GitHub
-                </a>
-              </div>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-              <div class="hero-stats" aria-label="Developer stats">
-                <div class="stat-item">
-                  <strong id="repo-count">0</strong>
-                  <span>Repos</span>
-                </div>
-                <div class="stat-item">
-                  <strong id="stars-count">0</strong>
-                  <span>Stars</span>
-                </div>
-                <div class="stat-item">
-                  <strong id="forks-count">0</strong>
-                  <span>Forks</span>
-                </div>
-              </div>
-            </div>
+p,
+h1,
+h2,
+h3,
+ul {
+  margin-top: 0;
+}
 
-            <div class="hero-panel" aria-label="Developer profile card">
-              <div class="panel-top">
-                <span class="status-dot"></span>
-                <span>Available for projects</span>
-              </div>
+button,
+a {
+  font: inherit;
+}
 
-              <div class="profile-card">
-                <div class="avatar-ring">
-                  <div class="avatar-inner">AJ</div>
-                </div>
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-                <h2>Ali Jutt</h2>
-                <p>Full-stack developer building clean, useful, and scalable solutions.</p>
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
 
-                <ul class="mini-list">
-                  <li>Modern Web Apps</li>
-                  <li>AI & automation</li>
-                  <li>Secure architecture</li>
-                  <li>Product thinking</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+.section {
+  padding: 94px 0;
+}
 
-        <section id="about" class="section">
-          <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">About</p>
-              <h2>Turning ideas into practical software.</h2>
-            </div>
+.section-soft {
+  background: rgba(10, 17, 27, 0.72);
+  border-top: 1px solid rgba(148, 163, 184, 0.07);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+}
 
-            <div class="about-grid">
-              <div class="about-copy">
-                <p>
-                  I’m a developer focused on building efficient and meaningful digital products.
-                  I enjoy working across the stack, solving real-world challenges, and shipping code
-                  that is both technically strong and easy to maintain.
-                </p>
-                <p>
-                  My work spans product engineering, automation, system design, and experimentation
-                  with modern tools that improve productivity and user experience.
-                </p>
-              </div>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 17, 29, 0.65);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
 
-              <div class="skill-panel">
-                <h3>Core Skills</h3>
-                <div class="skills-wrap">
-                  <span>TypeScript</span>
-                  <span>JavaScript</span>
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>GitHub</span>
-                  <span>APIs</span>
-                  <span>Automation</span>
-                  <span>UI/UX</span>
-                  <span>DevOps</span>
-                  <span>System Design</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 20px;
+}
 
-        <section id="projects" class="section alt-section">
-          <div class="container">
-            <div class="section-heading split-heading">
-              <div>
-                <p class="eyebrow">Projects</p>
-                <h2>Selected work from GitHub.</h2>
-              </div>
-              <a href="https://github.com/alijutt-xd" class="text-link" target="_blank" rel="noreferrer">See all repositories</a>
-            </div>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
 
-            <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
-          </div>
-        </section>
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 14px 32px rgba(92, 129, 255, 0.38);
+  font-size: 0.76rem;
+}
 
-        <section id="workflow" class="section">
-          <div class="container">
-            <div class="section-heading">
-              <p class="eyebrow">Approach</p>
-              <h2>How I build.</h2>
-            </div>
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
 
-            <div class="workflow-grid">
-              <article class="workflow-card">
-                <span class="step-tag">01</span>
-                <h3>Understand</h3>
-                <p>Clarify goals, constraints, and user needs before writing production code.</p>
-              </article>
+.main-nav a,
+.text-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
 
-              <article class="workflow-card">
-                <span class="step-tag">02</span>
-                <h3>Design</h3>
-                <p>Create clean architecture and user-focused flows that are scalable and maintainable.</p>
-              </article>
+.main-nav a:hover,
+.text-link:hover {
+  color: var(--text);
+}
 
-              <article class="workflow-card">
-                <span class="step-tag">03</span>
-                <h3>Build</h3>
-                <p>Implement with strong engineering practices, clear structure, and reliable quality checks.</p>
-              </article>
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.92rem 1.42rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
 
-              <article class="workflow-card">
-                <span class="step-tag">04</span>
-                <h3>Ship</h3>
-                <p>Deploy thoughtfully and iterate based on real feedback and performance.</p>
-              </article>
-            </div>
-          </div>
-        </section>
+.button:hover {
+  transform: translateY(-1px);
+}
 
-        <section id="contact" class="section contact-section">
-          <div class="container contact-card">
-            <div>
-              <p class="eyebrow">Contact</p>
-              <h2>Let’s build something meaningful.</h2>
-            </div>
+.button-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  box-shadow: 0 18px 35px rgba(92, 129, 255, 0.32);
+}
 
-            <div class="contact-actions">
-              <a class="button button-primary" href="https://github.com/alijutt-xd" target="_blank" rel="noreferrer">GitHub Profile</a>
-            </div>
-          </div>
-        </section>
-      </main>
+.button-ghost {
+  border-color: rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.05);
+  color: var(--text);
+}
 
-      <footer class="site-footer">
-        <div class="container footer-inner">
-          <p>© 2026 Ali Jutt</p>
-          <p>Built with passion and GitHub Pages.</p>
-        </div>
-      </footer>
-    </div>
+.hero {
+  padding-top: 82px;
+}
 
-    <script src="script.js"></script>
-  </body>
-</html>
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.mini-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(159, 249, 217, 0.16);
+  background: rgba(159, 249, 217, 0.05);
+  color: var(--secondary);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #56f0b1;
+  box-shadow: 0 0 16px rgba(86, 240, 177, 0.8);
+}
+
+.hero-copy h1 {
+  margin: 20px 0 16px;
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.trust-strip div {
+  min-width: 120px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(15, 23, 34, 0.7);
+  border: 1px solid var(--card-border);
+}
+
+.trust-strip strong {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.trust-strip span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-panel {
+  position: relative;
+  width: min(100%, 440px);
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background: linear-gradient(180deg, rgba(18, 28, 43, 0.96), rgba(11, 19, 31, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.panel-glow {
+  position: absolute;
+  inset: 20% 10% auto 20%;
+  height: 220px;
+  background: radial-gradient(circle, rgba(124, 180, 255, 0.18), transparent 60%);
+  filter: blur(30px);
+}
+
+.profile-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar-circle {
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  font-size: 1.6rem;
+  font-weight: 800;
+  box-shadow: 0 20px 40px rgba(124, 180, 255, 0.3);
+}
+
+.label {
+  margin: 0 0 4px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.stack-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 24px;
+}
+
+.stack-list span {
+  display: inline-flex;
+  padding: 0.64rem 0.86rem;
+  border-radius: 999px;
+  background: rgba(124, 180, 255, 0.08);
+  border: 1px solid rgba(124, 180, 255, 0.14);
+  color: var(--soft);
+  font-size: 0.88rem;
+}
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mini-stats div {
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: rgba(148, 163, 184, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.mini-stats strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.96rem;
+  color: var(--text);
+}
+
+.mini-stats span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.section-heading {
+  margin-bottom: 32px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 3vw, 3.2rem);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.about-copy {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 1.06rem;
+}
+
+.about-copy p {
+  margin-bottom: 16px;
+}
+
+.capabilities-card {
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.capabilities-card h3 {
+  margin: 0 0 18px;
+  font-size: 1.3rem;
+}
+
+.capabilities-card ul {
+  display: grid;
+  gap: 12px;
+  padding-left: 18px;
+  margin: 0;
+  color: var(--soft);
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.service-card,
+.timeline-item {
+  background: rgba(15, 23, 34, 0.8);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(3, 7, 18, 0.14);
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(124, 180, 255, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(124, 180, 255, 0.18);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.service-card h3,
+.timeline-item h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.service-card p,
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.split-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  background: rgba(15, 23, 34, 0.8);
+  padding: 22px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 180, 255, 0.32);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 1.14rem;
+  letter-spacing: -0.04em;
+}
+
+.project-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(124, 180, 255, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(124, 180, 255, 0.14);
+}
+
+.project-description {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 18px 0 20px;
+  flex-grow: 1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  padding-top: 16px;
+}
+
+.meta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.repo-link {
+  text-decoration: none;
+  color: var(--soft);
+  font-weight: 600;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 32px;
+  background: rgba(124, 180, 255, 0.12);
+  border: 1px solid rgba(124, 180, 255, 0.16);
+  border-radius: 999px;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px 38px;
+  background: linear-gradient(135deg, rgba(124, 180, 255, 0.12), rgba(141, 107, 255, 0.12));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 30px;
+}
+
+.contact-box h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+  padding: 26px 0 40px;
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .hero-grid,
+  .about-grid,
+  .projects-grid,
+  .services-grid,
+  .timeline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .split-heading,
+  .contact-box,
+  .nav-wrap {
+    display: grid;
+  }
+
+  .projects-grid,
+  .services-grid,
+  .timeline-grid,
+  .about-grid,
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-wrap {
+    place-items: start;
+    padding: 18px 0;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.7rem;
+  }
+
+  .trust-strip {
+    gap: 12px;
+  }
+
+  .contact-box {
+    padding: 26px 20px;
+  }
+}
